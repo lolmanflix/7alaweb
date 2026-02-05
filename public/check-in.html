@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Organizer Check-In | 7ALA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="card form-card">
+        <p class="kicker">ORGANIZER ACCESS ONLY</p>
+        <h1>Ticket Check-In Scanner</h1>
+        <p class="lineup">Warning: Do not scan guest QR tickets unless you are an authorized organizer.</p>
+        <form id="checkInForm">
+          <div class="grid">
+            <label>Ticket Code
+              <input name="ticketCode" id="ticketCodeInput" required />
+            </label>
+            <label>Organizer PIN
+              <input type="password" name="organizerPin" required />
+            </label>
+          </div>
+          <button type="submit">Validate & Check-In</button>
+        </form>
+        <p id="resultMessage"></p>
+      </section>
+    </main>
+    <script src="check-in.js"></script>
+  </body>
+</html>
