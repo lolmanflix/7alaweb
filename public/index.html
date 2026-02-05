@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7ALA Reservation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero card">
+        <p class="kicker">7ALA EXPERIENCE</p>
+        <h1>Sunrise Session Reservation</h1>
+        <p class="subtitle">07 February · 3:00 AM – 12:00 PM</p>
+        <p class="lineup">Mark · Nour Odin · Assem · HN2 · Dizzy + Big surprise DJ</p>
+        <div class="policy">
+          <span>Selective entry</span>
+          <span>21+</span>
+          <span>Couples & mixed groups only</span>
+        </div>
+        <p class="warning-text">⚠️ Your QR ticket is single-use. Do not share it. Only organizers can scan it at the gate.</p>
+      </section>
+
+      <section class="card form-card">
+        <h2>Reserve Your Spot</h2>
+        <form id="reservationForm">
+          <div class="grid">
+            <label>Full Name<input required name="fullName" /></label>
+            <label>Email<input required type="email" name="email" /></label>
+            <label>Phone<input required name="phone" /></label>
+            <label>Guests<input required type="number" min="1" max="10" name="guests" /></label>
+            <label>Group Type
+              <select required name="groupType">
+                <option value="">Select</option>
+                <option>Couple</option>
+                <option>Mixed Group</option>
+              </select>
+            </label>
+            <label>Payment Method
+              <select required name="paymentMethod" id="paymentMethod">
+                <option value="">Select</option>
+                <option value="instapay">Instapay (01155650877)</option>
+                <option value="wallet">Wallet (01020840820)</option>
+              </select>
+            </label>
+            <label>Paid Amount (EGP)<input type="number" min="0" name="paymentAmount" /></label>
+            <label>Payment Reference<input required name="paymentReference" placeholder="Transaction ID" /></label>
+          </div>
+          <button type="submit" id="submitBtn">Confirm Reservation</button>
+        </form>
+        <p id="message"></p>
+        <div id="ticketPreview" class="ticket-preview hidden">
+          <h3>Ticket Generated</h3>
+          <p id="ticketCode"></p>
+          <p id="checkInLink"></p>
+          <img id="qrImage" alt="Ticket QR" />
+          <p class="warning-text">⚠️ Warning: This QR can be used only one time by organizers at entry.</p>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

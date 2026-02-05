@@ -1,0 +1,109 @@
+:root {
+  --bg: #0b0908;
+  --card: #11100f;
+  --primary: #e3c48d;
+  --text: #f5ebd6;
+  --muted: #bda982;
+  --border: #2c241a;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #1a1410 0%, var(--bg) 55%);
+}
+
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 30px 16px 70px;
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(170deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
+}
+
+.hero h1, h2, h3 { font-family: 'Cinzel', serif; letter-spacing: 0.4px; }
+.kicker { color: var(--primary); letter-spacing: 3px; font-size: 12px; }
+.subtitle { color: var(--primary); font-weight: 600; }
+.lineup { color: var(--muted); }
+
+.policy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+.policy span {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 14px;
+}
+input, select {
+  background: #0d0b0a;
+  color: var(--text);
+  border: 1px solid #33291f;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+button {
+  margin-top: 16px;
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1309;
+  background: linear-gradient(120deg, #d8b16c, #f2d7a3);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#message { min-height: 22px; color: var(--primary); }
+.ticket-preview {
+  margin-top: 15px;
+  border-top: 1px dashed var(--border);
+  padding-top: 16px;
+}
+.ticket-preview img {
+  width: 180px;
+  height: 180px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.hidden { display: none; }
+
+.warning-text {
+  color: #ffcb7c;
+  font-size: 13px;
+  margin-top: 14px;
+}
+
+#resultMessage {
+  min-height: 22px;
+  color: var(--primary);
+}
