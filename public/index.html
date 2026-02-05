@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electramco Style Reservation | 7ALA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <main class="layout">
+      <section class="poster card">
+        <p class="limited">LIMITED SETS • 21+ • SELECTIVE ENTRY</p>
+        <h1>ELECTRAMCO</h1>
+        <div class="meta">
+          <p><strong>AFTER MISS MONIQUE</strong></p>
+          <p>LOCATION: 13 MINS FROM GEM</p>
+          <p>03:00 AM TIL 12:00 PM</p>
+          <p>07 FEB</p>
+        </div>
+        <ul class="artists">
+          <li>ASSEM</li>
+          <li>DIZZY</li>
+          <li>HN2</li>
+          <li>MARK</li>
+          <li>NOUR ODEN</li>
+          <li class="surprise">BIG SURPRISE DJ</li>
+        </ul>
+        <p class="warning-text">⚠️ QR ticket is one-time use only. Do NOT share. Only organizers can scan it at the gate.</p>
+      </section>
+
+      <section class="card booking">
+        <h2>Reserve Now</h2>
+        <p class="muted">Couples and mixed groups only.</p>
+
+        <div class="price-board">
+          <div><span>Standing</span><strong>EGP 1,500</strong></div>
+          <div><span>Group Package</span><strong>EGP 5,000</strong></div>
+          <div class="sold"><span>VIP Table</span><strong>EGP 5,000 • SOLD OUT</strong></div>
+        </div>
+
+        <form id="reservationForm">
+          <div class="grid">
+            <label>Full Name<input required name="fullName" /></label>
+            <label>Email<input required type="email" name="email" /></label>
+            <label>Phone<input required name="phone" /></label>
+            <label>Guests<input required type="number" min="1" max="12" name="guests" /></label>
+            <label>Group Type
+              <select required name="groupType">
+                <option value="">Select</option>
+                <option>Couple</option>
+                <option>Mixed Group</option>
+              </select>
+            </label>
+            <label>Ticket Type
+              <select required name="ticketType" id="ticketType">
+                <option value="">Select Ticket</option>
+                <option value="standing">Standing — EGP 1,500</option>
+                <option value="group">Group Package — EGP 5,000</option>
+                <option value="vip" disabled>VIP Table — EGP 5,000 (Sold Out)</option>
+              </select>
+            </label>
+            <label>Payment Method
+              <select required name="paymentMethod">
+                <option value="">Select</option>
+                <option value="instapay">Instapay (01155650877)</option>
+                <option value="wallet">Wallet (01020840820)</option>
+              </select>
+            </label>
+            <label>Payment Reference<input required name="paymentReference" placeholder="Transaction ID" /></label>
+          </div>
+
+          <p class="price-total">Selected Price: <strong id="selectedPrice">EGP 0</strong></p>
+          <input type="hidden" name="paymentAmount" id="paymentAmount" value="0" />
+          <button type="submit" id="submitBtn">Confirm Reservation</button>
+        </form>
+
+        <p id="message"></p>
+        <div id="ticketPreview" class="ticket-preview hidden">
+          <h3>Ticket Generated</h3>
+          <p id="ticketCode"></p>
+          <p id="checkInLink"></p>
+          <img id="qrImage" alt="Ticket QR" />
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
